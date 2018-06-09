@@ -1,0 +1,19 @@
+body{
+    color: white;
+    background: black;
+}
+
+header{
+    text-align: center;
+    padding-top:1em;
+    clear: both;
+}
+header h1{
+    font-family: "Arial Black",serif;
+    font-size: 56pt;
+}
+header h2{
+    font-size: 18pt;
+    padding-left: 50%;
+    font-family: "Arial Narrow",serif;
+}

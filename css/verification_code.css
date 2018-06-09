@@ -1,0 +1,10 @@
+#verification_code{
+    width: 100px;
+    float: left;
+}
+#verification_img{
+    float: right;
+}
+#verif1,#verif2,#verif3,#verif4{
+    vertical-align: middle;
+}

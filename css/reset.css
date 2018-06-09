@@ -1,0 +1,11 @@
+html,body,header,main,section,article,nav,p,h1,h2,h3,img,ul,li,a,fieldset,aside{
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    vertical-align:baseline;
+}
+body{
+    min-width: 960px;
+}
+

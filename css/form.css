@@ -1,0 +1,33 @@
+fieldset{
+    margin: 4em auto;
+    border: double ;
+    width: 40%;
+    text-align: center;
+}
+legend{
+    text-align: left;
+    font-size: 24pt;
+    margin-left: 0.7em;
+    padding: 0 0.3em;
+}
+table{
+    margin: 2em auto;
+}
+input,button,label{
+    font-size: 14pt;
+}
+button{
+    margin-left: 1.5em;
+    margin-top: 0.5em;
+}
+input[type=submit],button{
+    padding: 0.1em 0.5em;
+    cursor: pointer;
+}
+input[type=submit]:hover ,button:hover{
+    background: gray;
+    border-color: gray;
+}
+.error{
+    color: red;
+}

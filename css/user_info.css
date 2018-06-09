@@ -1,0 +1,49 @@
+main{
+    margin: 8em 10%;
+}
+section{
+    margin-bottom: 2em;
+    padding: 2em;
+    overflow: auto;
+}
+#user_info{
+    background: #c1edfb;
+}
+#upload{
+    background: #ffffe0;
+}
+#bought{
+    background: #ffd8e1;
+}
+#sold{
+    background: #b7ffbd;
+}
+table{
+    text-align: center;
+    margin: 2em auto;
+    width: 100%;
+}
+#user_info table{
+    text-align: left;
+}
+#email,#balance,#address{
+    word-break: break-all;
+}
+#recharge{
+    background: lightgreen;
+    border: 1px solid gray;
+    font-size: 12pt;
+    padding: 0.1em 1em;
+    cursor: pointer;
+    float: right;
+}
+#recharge:hover{
+    background: #79d079;;
+}
+.description{
+    width: 60%;
+}
+#user_info p{
+    margin-top: 1em;
+    line-height: 2em;
+}

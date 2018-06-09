@@ -1,0 +1,68 @@
+main{
+    clear: both;
+    margin: 5em 3em 2.5em;
+}
+h2{
+    font-size: 22pt;
+    margin-bottom: 0.6em;
+}
+img{
+    float: left;
+    margin: 1.6em 2em 2em 0;
+}
+#artist{
+    font-style: italic;
+}
+#artist a{
+    text-decoration: none;
+    color: black;
+}
+#artist a:hover{
+    text-decoration: underline;
+}
+section{
+    margin-top: 1.5em;
+}
+.tag{
+    margin: 0.5em 0;
+    font-size: 16pt;
+    font-weight: bold;
+}
+#price,#heat{
+    color: red;
+}
+button{
+    background: lightyellow;
+    border: 1px solid gray;
+    font-weight: bold;
+    padding: 0.3em 0.6em;
+    cursor: pointer;
+}
+table{
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin: 1em 0;
+    width: 50%;
+}
+th{
+    background: lightgrey;
+    padding: 0.3em 0;
+}
+td{
+    border-right-style: none;
+    border-left-style: none;
+    padding: 0.3em 1em;
+}
+.intro{
+    clear: both;
+    border: 5px double black;
+    padding: 0 1em 1em;
+}
+.intro h3{
+    font-size: 18pt;
+    padding: 0.3em 0;
+}
+.intro p{
+    text-indent: 4em;
+}
+

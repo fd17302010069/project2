@@ -1,0 +1,18 @@
+header h1{
+    float: left;
+    padding-left: 0.5em;
+    font-size: 28pt;
+    font-family: "Arial Black",serif;
+}
+form{
+    float: right;
+    margin-right: 3.5em;
+    margin-top: 1.2em;
+}
+form div{
+    margin-top: 0.3em;
+}
+input[type=submit]{
+    cursor: pointer;
+}
+

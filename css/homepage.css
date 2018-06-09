@@ -1,0 +1,80 @@
+main{
+    padding: 5em 5%;
+}
+#gallery{
+    text-align: center;
+}
+#gallery img{
+    border: 12pt groove lightgrey;
+    max-width: 100%;
+    height: auto;
+    transition: all 0.5s;
+}
+#gallery img:hover{
+    transform: scale(1.1);
+    border-color: gray;
+}
+#gallery article{
+    margin: 1.3em 30%;
+    letter-spacing: 0.1em;
+    border: 0.5em double black;
+    color: black;
+    background: white;
+}
+#gallery article h3{
+    font-size: 16pt;
+    padding: 0.5em 0;
+}
+.intro{
+    text-align: left;
+    text-indent: 4em;
+    padding: 0.5em 0.5em 1em 1em;
+}
+#hottest{
+    margin-top: 6em;
+}
+#hottest img{
+    border: 2pt groove lightgrey;
+    float:left
+}
+#hottest1,#hottest2,#hottest3{
+    border: 2px solid white;
+    width: 30%;
+    height: 500px;
+    padding: 0.5em;
+    overflow: auto;
+}
+#hottest1{
+    float: left;
+}
+#hottest3{
+    float: right;
+}
+#hottest2{
+    margin: 0 auto;
+}
+#hottest .info{
+    padding-right: 1em;
+    text-align: right;
+}
+#hottest .info h3{
+    font-size: 15pt;
+    padding-bottom: 1em;
+}
+#hottest .intro{
+    float: left;
+    padding-top: 1em;
+}
+.more{
+    float: right;
+    color: black;
+    background: lightsteelblue;
+    padding: 0.3em 0.5em;
+    text-decoration: none;
+    margin-top: 0.5em;
+    font-weight: bold;
+}
+.more:hover{
+    background: #72819b;
+}
+

@@ -1,0 +1,83 @@
+main{
+    clear: both;
+    margin-top: 5em;
+}
+h2{
+    font-size: 18pt;
+    margin-left: 1em;
+}
+section{
+    clear: both;
+    margin: 5em 3em 2.5em;
+}
+#no_products{
+    font-size: 16pt;
+    display: none;
+}
+.product{
+    background: aliceblue;
+    margin-bottom: 1em;
+    clear: both;
+    overflow: auto;
+    padding: 1em;
+    border: 1px solid lightgray;
+    /*display: none;*/
+}
+.product img{
+    float: left;
+    margin-right: 1em;
+}
+.product h3{
+    font-size: 16pt;
+}
+.artist {
+    font-style: italic;
+    padding: 0.3em 0;
+}
+.intro{
+    margin-bottom: 0.6em;
+}
+.detail,.view_detail{
+    background: lightcyan;
+    border: 1px solid gray;
+    margin-right: 2em;
+}
+.delete{
+    background: lightpink;
+    border: 1px solid gray;
+    font-size: 12pt;
+    padding: 0.3em 0.5em;
+    cursor: pointer;
+}
+.delete:hover{
+    background: lightcoral;
+}
+.detail{
+    padding: 0.3em 0.5em;
+}
+.view_detail{
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+}
+.view_detail a{
+    padding: 0.3em 0.5em;
+    text-decoration: none;
+    color: black;
+}
+.view_detail a:hover{
+    background: #c4e3e3;
+    padding: 0.3em 0.5em;
+}
+#pay{
+    float: right;
+    margin-right: 3.5em;
+    margin-bottom: 1em;
+    background: lightgreen;
+    border: 1px solid gray;
+    font-size: 14pt;
+    padding: 0.3em 0.5em;
+    cursor: pointer;
+}
+#pay:hover{
+    background: #79d079;
+}

@@ -1,0 +1,36 @@
+nav{
+    background: gray;
+    overflow: auto;
+}
+nav ul{
+    list-style-type: none;
+    padding: 0.5em;
+    float: right;
+}
+nav ul li{
+    display: inline;
+}
+nav ul li a{
+    text-decoration: none;
+}
+.link:link,.link:visited{
+    color:white;
+    padding: 0.5em 0.5em;
+}
+.link:hover,.link:active,.current:link,.current:visited{
+    color:yellow;
+    background: darkblue;
+    padding: 0.5em 0.5em;
+}
+nav ul li ul{
+    position: absolute;
+    left: -999em;
+}
+nav ul li:hover ul{
+    left: auto;
+    right: 0;
+    color: white;
+    background: gray;
+    margin-top: 0.5em;
+    min-width: 109px;
+}

@@ -1,0 +1,26 @@
+<nav>
+    <ul>
+        <li><a href="#" class="link">首页</a></li>
+        <li><a href="search.php" class="link">搜索</a></li>
+        <li><a href="detail.php" class="link">商品详情</a></li>
+        <?php
+            if(!isset($_COOKIE['username'])) {
+                ?>
+                <li><a href="#" class="link">登陆</a></li>
+                <li><a href="#" class="link">注册</a></li>
+                <?php
+            }
+            else{
+                ?>
+                <li><a href="#" class="link">个人信息</a></li>
+                <li><a href="#" class="link">发布艺术品</a></li>
+                <li>
+                    <a href="#" class="link">购物车</a>
+                    <ul><li>商品数量：<?php ?></li></ul>
+                </li>
+                <li><a href="#" class="link">登出</a></li>
+                <?php
+            }
+        ?>
+    </ul>
+</nav>

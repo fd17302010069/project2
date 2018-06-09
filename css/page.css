@@ -1,0 +1,11 @@
+#page{
+    clear: both;
+    text-align: center;
+    margin-bottom: 2.5em;
+}
+.page_btn{
+    background: lightcyan;
+    border: 1px solid gray;
+    padding: 0.3em 0.8em;
+    cursor: pointer;
+}
