@@ -30,7 +30,7 @@ $mysqli = new mysqli("localhost","root","","art");
             <p>By <span id="artist"><a href="#"><?php echo $artwork["artist"]?></a></span></p>
             <img src="img/<?php echo $artwork["imageFileName"]?>" alt="<?php echo $artwork["title"]?>" height="500">
             <section>
-                <p class="tag">PRICE: <span id="price"><?php echo $artwork["price"].',000'?></span></p>
+                <p class="tag">PRICE: <span id="price"><?php echo $artwork["price"]?></span></p>
                 <p class="tag">HEAT: <span id="heat"><?php echo $artwork["view"]?></span></p>
                 <button id="add"><i class="fas fa-shopping-cart"></i> Add to Shopping Cart</button>
                 <table border="2">
@@ -42,28 +42,12 @@ $mysqli = new mysqli("localhost","root","","art");
                         <td><?php echo $artwork["yearOfWork"]?></td>
                     </tr>
                     <tr>
-                        <td>Medium</td>
-                        <td>Oil on canvas</td>
-                    </tr>
-                    <tr>
                         <td>Dimensions</td>
                         <td><?php echo $artwork["width"]?> X <?php echo $artwork["height"]?></td>
                     </tr>
                     <tr>
-                        <td>Gallery</td>
-                        <td>Van Gogh Museum</td>
-                    </tr>
-                    <tr>
                         <td>Genre</td>
                         <td><?php echo $artwork["genre"]?></td>
-                    </tr>
-                    <tr>
-                        <td>Era</td>
-                        <td>Modern</td>
-                    </tr>
-                    <tr>
-                        <td>Subject</td>
-                        <td>Still Life , Botanical</td>
                     </tr>
                 </table>
             </section>
