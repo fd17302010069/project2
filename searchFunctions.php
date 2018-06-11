@@ -4,16 +4,16 @@ $mysqli = new mysqli("localhost","root","","art");
 if(isset($_POST['search'])&&isset($_POST['search_option'])){
     $searchKey=$_POST['search'];
     $searchOption=$_POST['search_option'];
-    $sql="SELECT * FROM artworks";
+    $sql="SELECT * FROM artworks WHERE (orderID IS NULL)"; //未出售的艺术品才能被搜索到
     switch (count($searchOption)){
         case 1:
-            $sql.=" WHERE $searchOption[0] like '%$searchKey%'";
+            $sql.=" AND ($searchOption[0] like '%$searchKey%')";
             break;
         case 2:
-            $sql.=" WHERE $searchOption[0] like '%$searchKey%' OR $searchOption[1] like '%$searchKey%'";
+            $sql.=" AND ($searchOption[0] like '%$searchKey%' OR $searchOption[1] like '%$searchKey%')";
             break;
         case 3:
-            $sql.=" WHERE $searchOption[0] like '%$searchKey%' OR $searchOption[1] like '%$searchKey%' OR $searchOption[2] like '%$searchKey%'";
+            $sql.=" AND ($searchOption[0] like '%$searchKey%' OR $searchOption[1] like '%$searchKey%' OR $searchOption[2] like '%$searchKey%')";
             break;
     }//根据用户选择的条件筛选
 
@@ -37,12 +37,7 @@ if(isset($_POST['search'])&&isset($_POST['search_option'])){
         $pageSize=10;
         $totalPage=(int)(($totalCount % $pageSize===0) ? ($totalCount/$pageSize) : ($totalCount/$pageSize+1));
 
-        if(!isset($_POST['page'])){
-            $currentPage=1;
-        }
-        else{
-            $currentPage=$_POST['page'];
-        }
+        $currentPage = !isset($_POST['page']) ? 1 : $_POST['page'];
 
         $mark=($currentPage-1)*$pageSize;
         $firstPage=1;
@@ -52,6 +47,7 @@ if(isset($_POST['search'])&&isset($_POST['search_option'])){
 
         $sql.=" LIMIT ".$mark.",".$pageSize;
         $searchResult=$mysqli->query($sql);
+
 
         while($row=$searchResult->fetch_assoc()){
             if(mb_strlen($row["description"])>300){
@@ -72,16 +68,18 @@ if(isset($_POST['search'])&&isset($_POST['search_option'])){
             <?php
         }
         ?>
+
+
         <div id="page">
-            <span class="page_btn">首页</span>
-            <span class="page_btn">上一页</span>
-            <span class="page_btn">下一页</span>
-            <span class="page_btn">尾页</span>
-            第<input type="number" value="<?php echo $currentPage?>">页/共<?php echo $totalPage?>页
+            <span class="page_btn" onclick="turnPageForSearch(<?php echo $firstPage?>)">首页</span>
+            <span class="page_btn" onclick="turnPageForSearch(<?php echo $prePage?>)">上一页</span>
+            <span class="page_btn" onclick="turnPageForSearch(<?php echo $nextPage?>)">下一页</span>
+            <span class="page_btn" onclick="turnPageForSearch(<?php echo $lastPage?>)">尾页</span>
+            第<?php echo $currentPage?>页/共<?php echo $totalPage?>页
         </div>
         <?php
     }
-
-
 }
+$searchResult->close();
+$mysqli->close();
 ?>

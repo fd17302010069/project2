@@ -12,6 +12,7 @@ section{
 }
 .hint{
     font-size: 16pt;
+    text-align: center;
 }
 .search_result{
     background: lightyellow;

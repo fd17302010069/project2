@@ -27,12 +27,21 @@ $mysqli = new mysqli("localhost","root","","art");
             $artwork=$result->fetch_assoc();
         ?>
             <h2><?php echo $artwork["title"]?></h2>
-            <p>By <span id="artist"><a href="#"><?php echo $artwork["artist"]?></a></span></p>
+            <p>By <span id="artist" onclick="searchArtist()"><?php echo $artwork["artist"]?></span></p>
             <img src="img/<?php echo $artwork["imageFileName"]?>" alt="<?php echo $artwork["title"]?>" height="500">
             <section>
                 <p class="tag">PRICE: <span id="price"><?php echo $artwork["price"]?></span></p>
                 <p class="tag">HEAT: <span id="heat"><?php echo $artwork["view"]?></span></p>
-                <button id="add"><i class="fas fa-shopping-cart"></i> Add to Shopping Cart</button>
+
+                <?php
+                if($artwork["orderID"]===NULL){
+                    echo'<button><i class="fas fa-shopping-cart"></i> Add to Shopping Cart</button>';
+                }
+                else{
+                    echo'<span class="disabled_button">Sold Out</span>';
+                }
+                ?>
+
                 <table border="2">
                     <tr>
                         <th colspan="2">Product Details</th>
@@ -58,6 +67,22 @@ $mysqli = new mysqli("localhost","root","","art");
             </section>
         <?php
         }
+        else{
+            echo'<p class="hint">请先选择具体的商品！</p>';
+        }
         ?>
     </main>
+
+    <form id="search_by_artist" method="post" action="search.php">
+        <input type="hidden" name="search" value="<?php echo $artwork["artist"]?>">
+        <input type="hidden" name="search_option[]" value="artist">
+    </form>
+
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+    <script src="js/detail.js"></script>
 </body>
+
+<?php
+$result->close();
+$mysqli->close();
+?>

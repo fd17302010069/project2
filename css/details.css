@@ -13,12 +13,9 @@ img{
 #artist{
     font-style: italic;
 }
-#artist a{
-    text-decoration: none;
-    color: black;
-}
-#artist a:hover{
+#artist:hover{
     text-decoration: underline;
+    cursor: pointer;
 }
 section{
     margin-top: 1.5em;
@@ -37,6 +34,12 @@ button{
     font-weight: bold;
     padding: 0.3em 0.6em;
     cursor: pointer;
+}
+.disabled_button{
+    background: lightgray;
+    border: 1px solid gray;
+    font-weight: bold;
+    padding: 0.3em 0.6em;
 }
 table{
     border: 2px solid black;
@@ -65,4 +68,7 @@ td{
 .intro p{
     text-indent: 4em;
 }
-
+.hint{
+    font-size: 16pt;
+    text-align: center;
+}
