@@ -1,67 +1,72 @@
 main{
     padding: 5em 5%;
 }
-#gallery{
+.gallery{
     text-align: center;
 }
-#gallery img{
+.gallery img{
     border: 12pt groove lightgrey;
     max-width: 100%;
-    height: auto;
     transition: all 0.5s;
 }
-#gallery img:hover{
+.gallery img:hover{
     transform: scale(1.1);
     border-color: gray;
 }
-#gallery article{
+.gallery article{
     margin: 1.3em 30%;
     letter-spacing: 0.1em;
     border: 0.5em double black;
     color: black;
     background: white;
 }
-#gallery article h3{
+.gallery article h3{
     font-size: 16pt;
     padding: 0.5em 0;
+}
+.gallery_frame{
+    height: 683px;
+}
+.gallery_border{
+    height: 918px;
 }
 .intro{
     text-align: left;
     text-indent: 4em;
     padding: 0.5em 0.5em 1em 1em;
 }
-#hottest{
+.top_three{
     margin-top: 6em;
 }
-#hottest img{
+.top_three img{
     border: 2pt groove lightgrey;
     float:left
 }
-#hottest1,#hottest2,#hottest3{
+.top_three article{
     border: 2px solid white;
     width: 30%;
     height: 500px;
     padding: 0.5em;
     overflow: auto;
 }
-#hottest1{
+.top_three article:nth-child(1){
     float: left;
 }
-#hottest3{
+.top_three article:nth-child(2){
     float: right;
 }
-#hottest2{
+.top_three article:nth-child(3){
     margin: 0 auto;
 }
-#hottest .info{
+.top_three .info{
     padding-right: 1em;
     text-align: right;
 }
-#hottest .info h3{
+.top_three .info h3{
     font-size: 15pt;
     padding-bottom: 1em;
 }
-#hottest .intro{
+.top_three .intro{
     float: left;
     padding-top: 1em;
 }
@@ -76,5 +81,8 @@ main{
 }
 .more:hover{
     background: #72819b;
+}
+.none{
+    display: none;
 }
 

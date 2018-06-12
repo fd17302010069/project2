@@ -1,5 +1,9 @@
 <?php
 $mysqli = new mysqli("localhost","root","","art");
+if($mysqli->connect_errno){
+    echo'Failed to connect to MySQL:'.$mysqli->connect_error;
+}
+$mysqli->query("set names 'utf8'");
 
 if(isset($_POST['search'])&&isset($_POST['search_option'])){
     $searchKey=$_POST['search'];
@@ -18,7 +22,12 @@ if(isset($_POST['search'])&&isset($_POST['search_option'])){
     }//根据用户选择的条件筛选
 
     if(isset($_POST['sort'])){
-        $sql.=" ORDER BY {$_POST['sort']}";
+        if($_POST['sort']==='view'){
+            $sql.=" ORDER BY {$_POST['sort']} desc"; //热度从大到小排列 //原则上？
+        }
+        else{
+            $sql.=" ORDER BY {$_POST['sort']}";
+        }
     }//排序
 
     $searchResult=$mysqli->query($sql);
@@ -80,6 +89,5 @@ if(isset($_POST['search'])&&isset($_POST['search_option'])){
         <?php
     }
 }
-$searchResult->close();
-$mysqli->close();
-?>
+
+$mysqli->close(); ?>

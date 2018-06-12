@@ -1,5 +1,9 @@
 <?php
 $mysqli = new mysqli("localhost","root","","art");
+if($mysqli->connect_errno){
+    echo'Failed to connect to MySQL:'.$mysqli->connect_error;
+}
+$mysqli->query("set names 'utf8'");
 ?>
 
 <!DOCTYPE html>
@@ -81,8 +85,6 @@ $mysqli = new mysqli("localhost","root","","art");
     <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
     <script src="js/detail.js"></script>
 </body>
+</html>
 
-<?php
-$result->close();
-$mysqli->close();
-?>
+<?php $mysqli->close(); ?>

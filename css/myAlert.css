@@ -1,0 +1,40 @@
+.shield{
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 5%;
+    width: 380px;
+    height: 120px;
+    margin-left: -190px;
+    background: white;
+    border: solid gray;
+    border-radius: 10px;
+    color: black;
+    z-index: 25;
+}
+.alert_content{
+    padding: 10px;
+}
+.alert_header{
+    font-size: 14pt;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.alert_body{
+    font-size: 13pt;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.alert_footer{
+    font-size: 10pt;
+    margin-right: 10px;
+    margin-top: 10px;
+    text-align: right;
+}
+.okButton{
+    float: right;
+    font-size: 12pt;
+}
+.close{
+    display: none;
+}
