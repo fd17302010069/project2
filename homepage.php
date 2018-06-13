@@ -1,7 +1,7 @@
 <?php
 $mysqli = new mysqli("localhost","root","","art");
 if($mysqli->connect_errno){
-    echo'Failed to connect to MySQL:'.$mysqli->connect_error;
+    die('Failed to connect to MySQL:'.$mysqli->connect_error);
 }
 $mysqli->query("set names 'utf8'"); //修正读取数据库时出现的乱码
 $hottestResult=$mysqli->query("SELECT * FROM artworks WHERE orderID is Null ORDER BY view desc LIMIT 0,3");

@@ -10,7 +10,7 @@
             if(!isset($_SESSION['username'])) {
                 ?>
                 <li><a href="login.php" class="link">登陆</a></li>
-                <li><a href="#" class="link">注册</a></li>
+                <li><a href="register.php" class="link">注册</a></li>
                 <?php
             }
             else{

@@ -44,7 +44,15 @@ cancel.onclick=function () {
     window.history.back();
 };
 
+function checkAll(){
+    for(let i=0;i<loginForm.elements.length;i++){
+        loginForm.elements[i].focus();
+        loginForm.elements[i].blur();
+    }
+}
+
 loginForm.onsubmit=function () {
+    checkAll();
     if(!checkFlags(flags)){
         return false;
     }

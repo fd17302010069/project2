@@ -1,7 +1,7 @@
 <?php
 $mysqli = new mysqli("localhost","root","","art");
 if($mysqli->connect_errno){
-    echo'Failed to connect to MySQL:'.$mysqli->connect_error;
+    die('Failed to connect to MySQL:'.$mysqli->connect_error);
 }
 $mysqli->query("set names 'utf8'");
 
@@ -16,7 +16,7 @@ if(!isset($_POST['username'])){
         return;
     }
     else{
-        header("location:search.php");
+        header("location:homepage.php");
     }
 }
 else{
@@ -39,7 +39,7 @@ else{
             $_SESSION["userID"]=$user['userID'];
 
             myAlert("登陆成功！",false);
-            ?><script>window.history.back();</script><?php
+            ?><script>window.location.href='homepage.php';</script><?php //TODO:登陆后回到上一个页面
 
         }
     }

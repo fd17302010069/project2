@@ -1,8 +1,11 @@
 <?php
-session_start();
+if(!isset($_SESSION)){
+    session_start();
+}
 if(isset($_SESSION['username'])){
-    header("location:search.php");
-}?>
+    header("location:homepage.php");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +17,7 @@ if(isset($_SESSION['username'])){
     <link rel="stylesheet" type="text/css" href="css/nav.css" />
     <link rel="stylesheet" type="text/css" href="css/main_header.css" />
     <link rel="stylesheet" type="text/css" href="css/form.css" />
-    <link rel="stylesheet" type="text/css" href="css/verification_code.css" />
+<!--    <link rel="stylesheet" type="text/css" href="css/verification_code.css" />-->
     <link rel="stylesheet" type="text/css" href="css/myAlert.css" />
 
 </head>

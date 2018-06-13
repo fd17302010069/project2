@@ -1,7 +1,7 @@
 <?php
 $mysqli = new mysqli("localhost","root","","art");
 if($mysqli->connect_errno){
-    echo'Failed to connect to MySQL:'.$mysqli->connect_error;
+    die('Failed to connect to MySQL:'.$mysqli->connect_error);
 }
 $mysqli->query("set names 'utf8'");
 
