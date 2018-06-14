@@ -15,7 +15,7 @@
             }
             else{
                 ?>
-                <li><a href="#" class="link">个人信息</a></li>
+                <li><a href="userInfo.php" class="link">个人信息</a></li>
                 <li><a href="#" class="link">发布艺术品</a></li>
                 <li>
                     <a href="#" class="link">购物车</a>

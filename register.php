@@ -34,7 +34,7 @@ if(isset($_SESSION['username'])){
                 <legend>新用户注册</legend>
                 <table cellspacing="10em">
                     <tr>
-                        <td><label for="username">昵称：</label></td>
+                        <td><label for="username">用户名：</label></td>
                         <td><input type="text" name="username" id="username"></td>
                     </tr>
                     <tr><td colspan="2"><span class="error" id="name_error">&nbsp;</span></td></tr>

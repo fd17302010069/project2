@@ -4,6 +4,7 @@ if($mysqli->connect_errno){
     die('Failed to connect to MySQL:'.$mysqli->connect_error);
 }
 $mysqli->query("set names 'utf8'");
+
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +30,9 @@ $mysqli->query("set names 'utf8'");
         if(isset($_GET['id'])){
             $result=$mysqli->query("SELECT * FROM artworks WHERE artworkID='{$_GET['id']}'");
             $artwork=$result->fetch_assoc();
+            if(!$artwork){
+                die("<p class='hint'>艺术品不存在！</p><script>document.getElementsByClassName(\"link\")[2].className=\"link current\";</script>");
+            }
         ?>
             <h2><?php echo $artwork["title"]?></h2>
             <p>By <span id="artist" onclick="searchArtist()"><?php echo $artwork["artist"]?></span></p>

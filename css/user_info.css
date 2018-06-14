@@ -35,15 +35,18 @@ table{
     font-size: 12pt;
     padding: 0.1em 1em;
     cursor: pointer;
-    float: right;
 }
 #recharge:hover{
     background: #79d079;;
 }
-.description{
-    width: 60%;
+#recharge_value{
+    vertical-align: center;
+    margin-right: 1em;
 }
-#user_info p{
+#user_info div{
     margin-top: 1em;
     line-height: 2em;
+}
+#user_info form{
+    margin: 0;
 }
