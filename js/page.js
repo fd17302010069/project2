@@ -15,5 +15,8 @@ function turnPageForSearch(pageNum) {
                 page:pageNum
             });
     }
+}
 
+function turnPageForCart(pageNum) {
+    $("#cart_content").load("shoppingCartContents.php",{page:pageNum});
 }

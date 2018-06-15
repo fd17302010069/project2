@@ -1,0 +1,1 @@
+document.getElementsByClassName("link")[5].className="link current";

@@ -10,9 +10,8 @@ section{
     clear: both;
     margin: 5em 3em 2.5em;
 }
-#no_products{
+.hint{
     font-size: 16pt;
-    display: none;
 }
 .product{
     background: aliceblue;

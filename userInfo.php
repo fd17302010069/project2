@@ -19,6 +19,19 @@ else{
     $artResult=$mysqli->query("SELECT * FROM artworks WHERE ownerID='{$_SESSION['userID']}'");
     $orderResult=$mysqli->query("SELECT * FROM orders WHERE ownerID='{$_SESSION['userID']}'");
     $soldResult=$mysqli->query("SELECT * FROM artworks WHERE (ownerID='{$_SESSION['userID']}')&&(orderID is not NULL)");
+
+    if(isset($_POST["recharge_value"])){
+        $newBalance=(int)$userInfo["balance"]+(int)$_POST["recharge_value"];
+        $sql="UPDATE users SET balance='$newBalance' WHERE userID='{$_SESSION['userID']}'";
+        $rechargeResult=$mysqli->query($sql);
+        if($rechargeResult){
+            myAlert("充值成功！");
+            $userInfo["balance"]=$newBalance;
+        }
+        else{
+            myAlert("充值失败！请检查网络设置");
+        }
+    }
 }
 ?>
 
@@ -31,6 +44,7 @@ else{
     <link rel="stylesheet" type="text/css" href="css/nav.css" />
     <link rel="stylesheet" type="text/css" href="css/content_header.css" />
     <link rel="stylesheet" type="text/css" href="css/user_info.css" />
+    <link rel="stylesheet" type="text/css" href="css/myAlert.css" />
 </head>
 <body>
     <?php
@@ -51,8 +65,8 @@ else{
                 地址：<?php echo $userInfo["address"]?>
                 <br />
                 余额：<?php echo $userInfo["balance"]?>
-                <form id="recharge_form">
-                    <input type="number" title="请输入充值金额" id="recharge_value">
+                <form id="recharge_form" method="post" action="userInfo.php">
+                    <input type="number" title="请输入充值金额" name="recharge_value" id="recharge_value" min="1" step="1">
                     <button type="submit" name="recharge" id="recharge">充值</button>
                 </form>
             </div>
@@ -79,7 +93,7 @@ else{
                     <?php
                 }
                 if($artResult->num_rows===0){
-                    echo '<tr><td rowspan="4">没有上传的艺术品</td></tr>';
+                    echo '<tr><td colspan="4">没有上传的艺术品</td></tr>';
                 }
                 ?>
             </table>
@@ -164,5 +178,8 @@ else{
     </main>
 
 <script src="js/userInfo.js"></script>
+<script src="js/myAlert.js"></script>
+
 </body>
 </html>
+<?php $mysqli->close(); ?>
