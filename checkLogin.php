@@ -36,6 +36,7 @@ else{
 
             $_SESSION["username"]=$_POST['username'];
             $_SESSION["cartNum"]=$cartNum;
+            $_SESSION["balance"]=$user['balance'];
             $_SESSION["userID"]=$user['userID'];
 
             myAlert("登陆成功！",false);

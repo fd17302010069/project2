@@ -16,7 +16,7 @@
             else{
                 ?>
                 <li><a href="userInfo.php" class="link">个人信息</a></li>
-                <li><a href="#" class="link">发布艺术品</a></li>
+                <li><a href="launch.php" class="link">发布艺术品</a></li>
                 <li>
                     <a href="shoppingCart.php" class="link">购物车</a>
                     <ul><li>商品数量：<?php echo $_SESSION['cartNum']?></li></ul>

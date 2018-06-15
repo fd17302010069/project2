@@ -1,8 +1,54 @@
 main{
     clear: both;
-    margin-top: 5em;
+    margin: 5em 3em 2.5em;
 }
 h2{
     font-size: 18pt;
-    margin-left: 1em;
+}
+.launch{
+    float: none;
+}
+fieldset{
+    margin: 4em 0;
+    border: double ;
+}
+legend{
+    text-align: left;
+    margin-left: 0.7em;
+    padding: 0 0.3em;
+}
+table{
+    font-size: 14pt;
+    padding: 1.5em 3.25em 1.5em 0.7em;
+}
+label.launch_label{
+    padding-right: 1em;
+}
+td{
+    padding-right: 3em;
+}
+textarea{
+    vertical-align: top;
+    width: 90%;
+    height: 200px;
+}
+input.launch_input{
+    font-size: 14pt;
+    height: 30px;
+}
+input.long{
+    width: 90%;
+}
+#img_preview{
+    margin-left: 3.25em;
+    max-width: 100%;
+}
+.launch_btn{
+    font-size: 14pt;
+    width: 10%;
+}
+.launch_btn:hover{
+    background: gray;
+    border-color: gray;
+    color: white;
 }

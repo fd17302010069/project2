@@ -40,6 +40,7 @@ else{
 
             $_SESSION["username"]=$_POST['username'];
             $_SESSION["cartNum"]=0;
+            $_SESSION["balance"]=0;
             $_SESSION["userID"]=$user['userID'];
 
             myAlert("注册成功！",false);

@@ -27,6 +27,7 @@ else{
         if($rechargeResult){
             myAlert("充值成功！");
             $userInfo["balance"]=$newBalance;
+            $_SESSION["balance"]=$newBalance;
         }
         else{
             myAlert("充值失败！请检查网络设置");
