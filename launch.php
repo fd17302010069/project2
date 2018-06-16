@@ -40,51 +40,51 @@ if(!isset($_SESSION['userID'])){
                     <tr>
                         <td colspan="2">
                             <label for="title" class="launch_label">名称</label>
-                            <input type="text" name="title" id="title" class="launch_input long">
+                            <input type="text" name="title" id="title" class="launch_input long" required>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             <label for="artist" class="launch_label">作者</label>
-                            <input type="text" name="artist" id="artist" class="launch_input long">
+                            <input type="text" name="artist" id="artist" class="launch_input long" required>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             <label for="description" class="launch_label">简介</label>
-                            <textarea name="description" id="description"></textarea>
+                            <textarea name="description" id="description" required></textarea>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label for="year" class="launch_label">年份</label>
-                            <input type="number" name="year" id="year" step="1" class="launch_input">
+                            <input type="number" name="year" id="year" step="1" class="launch_input" required title="年份必须为整数">
                         </td>
                         <td>
                             <label for="genre" class="launch_label">流派</label>
-                            <input type="text" name="genre" id="genre" class="launch_input">
+                            <input type="text" name="genre" id="genre" class="launch_input" required>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label for="height" class="launch_label">长度</label>
-                            <input type="number" name="height" id="height" min="0" class="launch_input">
+                            <input type="number" name="height" id="height" min="0.01" step="0.01" class="launch_input" required title="长度必须为正数">
                         </td>
                         <td>
                             <label for="width" class="launch_label">宽度</label>
-                            <input type="number" name="width" id="width" min="0" class="launch_input">
+                            <input type="number" name="width" id="width" min="0.01" step="0.01" class="launch_input" required title="宽度必须为正数">
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             <label for="price" class="launch_label">价格</label>
-                            <input type="number" name="price" id="price" min="1" step="1" class="launch_input">
+                            <input type="number" name="price" id="price" min="1" step="1" class="launch_input" required title="价格必须为正整数">
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label for="file" class="launch_label">图片</label>
-                            <input type="file" name="file" id="file">
+                            <input type="file" name="file" id="file" required accept="image/*">
                         </td>
                     </tr>
                     <tr>
@@ -101,6 +101,7 @@ if(!isset($_SESSION['userID'])){
             </fieldset>
         </form>
     </main>
+
     <script src="js/launch.js"></script>
 
 </body>

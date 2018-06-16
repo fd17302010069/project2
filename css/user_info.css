@@ -50,3 +50,6 @@ table{
 #user_info form{
     margin: 0;
 }
+.unavailable{
+    color: lightgray;
+}

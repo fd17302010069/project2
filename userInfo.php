@@ -88,8 +88,20 @@ else{
                     <tr>
                         <td><a href="detail.php?id=<?php echo $row["artworkID"];?>"><?php echo $row["title"];?></a></td>
                         <td><?php echo explode(" ",$row["timeReleased"])[0];?></td>
-                        <td>修改</td>
-                        <td>删除</td>
+                        <?php
+                        if($row["orderID"]===null){
+                            ?>
+                            <td><a href="launch.php?id=<?php echo $row["artworkID"];?>">修改</a></td>
+                            <td>删除</td>
+                            <?php
+                        }
+                        else{
+                            ?>
+                            <td><span class="unavailable">修改</span></td>
+                            <td><span class="unavailable">删除</span></td>
+                            <?php
+                        }
+                        ?>
                     </tr>
                     <?php
                 }

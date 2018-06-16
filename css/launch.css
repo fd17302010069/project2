@@ -28,6 +28,7 @@ td{
     padding-right: 3em;
 }
 textarea{
+    font-size: 14pt;
     vertical-align: top;
     width: 90%;
     height: 200px;
