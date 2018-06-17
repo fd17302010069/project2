@@ -5,6 +5,7 @@ if($mysqli->connect_errno){
 }
 $mysqli->query("set names 'utf8'");
 
+include 'generateCartOption.php';
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +34,9 @@ $mysqli->query("set names 'utf8'");
             if(!$artwork){
                 die("<p class='hint'>艺术品不存在！</p><script>document.getElementsByClassName(\"link\")[2].className=\"link current\";</script>");
             }
+            else{
+                $cartResult=$mysqli->query("SELECT * FROM carts WHERE artworkID='{$_GET['id']}'");
+            }
         ?>
             <h2><?php echo $artwork["title"]?></h2>
             <p>By <span id="artist" onclick="searchArtist()"><?php echo $artwork["artist"]?></span></p>
@@ -42,12 +46,7 @@ $mysqli->query("set names 'utf8'");
                 <p class="tag">HEAT: <span id="heat"><?php echo $artwork["view"]?></span></p>
 
                 <?php
-                if($artwork["orderID"]===NULL){
-                    echo'<button><i class="fas fa-shopping-cart"></i> Add to Shopping Cart</button>';
-                }
-                else{
-                    echo'<span class="disabled_button">Sold Out</span>';
-                }
+                generateCartOption($artwork,$cartResult);
                 ?>
 
                 <table border="2">

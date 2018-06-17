@@ -47,9 +47,16 @@ input.long{
 .launch_btn{
     font-size: 14pt;
     width: 10%;
+    margin-top: 1em;
 }
 .launch_btn:hover{
     background: gray;
     border-color: gray;
     color: white;
+}
+.error{
+    color: red;
+    font-size: 10pt;
+    float: right;
+    margin-bottom: -0.6em;
 }

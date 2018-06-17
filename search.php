@@ -1,3 +1,5 @@
+<?php header("Cache-control: private");?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

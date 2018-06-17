@@ -67,7 +67,7 @@ else{
                 <br />
                 余额：<?php echo $userInfo["balance"]?>
                 <form id="recharge_form" method="post" action="userInfo.php">
-                    <input type="number" title="请输入充值金额" name="recharge_value" id="recharge_value" min="1" step="1">
+                    <input type="number" title="请输入充值金额" name="recharge_value" id="recharge_value" min="1" step="1" required>
                     <button type="submit" name="recharge" id="recharge">充值</button>
                 </form>
             </div>
