@@ -92,7 +92,7 @@ else{
                         if($row["orderID"]===null){
                             ?>
                             <td><a href="launch.php?id=<?php echo $row["artworkID"];?>">修改</a></td>
-                            <td>删除</td>
+                            <td><a href="deleteConfirm.php?id=<?php echo $row["artworkID"];?>">删除</a></td>
                             <?php
                         }
                         else{
@@ -133,7 +133,7 @@ else{
                         ?>
                         <td><a href="detail.php?id=<?php echo $r1["artworkID"];?>"><?php echo $r1["title"];?></a></td>
                         <td rowspan="<?php echo $artCount;?>"><?php echo $row["timeCreated"];?></td>
-                        <td rowspan="<?php echo $artCount;?>"><?php echo $row["timeCreated"];?></td>
+                        <td rowspan="<?php echo $artCount;?>"><?php echo $row["sum"];?></td>
                     </tr>
                     <?php
                     while($r=$artInOrder->fetch_assoc()){
@@ -163,9 +163,11 @@ else{
                 <?php
                 while ($row=$soldResult->fetch_assoc()){
                     $orderID=$row["orderID"];
-                    $currentOrder=$mysqli->query("SELECT * FROM orders WHERE orderID='$orderID'");
+                    $currentOrderResult=$mysqli->query("SELECT * FROM orders WHERE orderID='$orderID'");
+                    $currentOrder=$currentOrderResult->fetch_assoc();
                     $buyerID=$currentOrder["ownerID"];
-                    $currentBuyer=$mysqli->query("SELECT * FROM users WHERE userID='$buyerID'");
+                    $currentBuyerResult=$mysqli->query("SELECT * FROM users WHERE userID='$buyerID'");
+                    $currentBuyer=$currentBuyerResult->fetch_assoc();
                     ?>
                     <tr>
                         <td><a href="detail.php?id=<?php echo $row["artworkID"];?>"><?php echo $row["title"];?></a></td>
@@ -173,10 +175,10 @@ else{
                         <td><?php echo $row["price"];?></td>
                         <td>
                             <?php
-                            echo "用户名：".$currentBuyer["name"]."\n";
-                            echo "邮箱：".$currentBuyer["email"]."\n";
-                            echo "电话：".$currentBuyer["tel"]."\n";
-                            echo "地址：".$currentBuyer["address"]."\n";
+                            echo "用户名：".$currentBuyer["name"]."<br />";
+                            echo "邮箱：".$currentBuyer["email"]."<br />";
+                            echo "电话：".$currentBuyer["tel"]."<br />";
+                            echo "地址：".$currentBuyer["address"];
                             ?>
                         </td>
                     </tr>

@@ -26,10 +26,10 @@ function generateCartOption($artwork,$cartResult){
                     echo'<span class="disabled_button">Already In Your Cart</span>';
                 }
                 else{
-                    echo'<button><i class="fas fa-shopping-cart"></i> Add to Shopping Cart</button>';
+                    echo'<button type="button" id="add"><i class="fas fa-shopping-cart"></i> Add to Shopping Cart</button>';
                 }
                 if($inOthersCart){
-                    echo'<i class="fa fa-exclamation-circle" title="已被其他用户加入购物车"></i>';
+                    echo' <i class="fa fa-exclamation-circle" title="已被其他用户加入购物车"></i>';
                 }
             }
         }

@@ -13,6 +13,9 @@ let file=document.getElementById("file");
 let error=document.getElementsByClassName("error");
 
 let flags=[false,false,false,false,false,false,false,false,false];
+if(file.getAttribute("required")===null){
+    flags[8]=true;
+}
 function checkFlags(flags){
     for(let i=0;i<flags.length;i++){
         if(flags[i]===false){

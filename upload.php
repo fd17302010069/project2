@@ -25,15 +25,24 @@ if(isset($_POST["art_title"]) && isset($_FILES["file"])){
         die('Error:'.$_FILES["file"]["error"]);
     }
 
+    $artist=$mysqli->real_escape_string($_POST["art_artist"]);
+    $title=$mysqli->real_escape_string($_POST["art_title"]);
+    $description=$mysqli->real_escape_string($_POST["art_description"]);
+    $year=$mysqli->real_escape_string($_POST["year"]);
+    $genre=$mysqli->real_escape_string($_POST["genre"]);
+    $width=$mysqli->real_escape_string($_POST["width"]);
+    $height=$mysqli->real_escape_string($_POST["height"]);
+    $price=$mysqli->real_escape_string($_POST["price"]);
+
     $sql="INSERT INTO artworks (artist,title,description,yearOfWork,genre,width,height,price,ownerID)
-          VALUES ('{$_POST["art_artist"]}',
-                  '{$_POST["art_title"]}',
-                  '{$_POST["art_description"]}',
-                  '{$_POST["year"]}',
-                  '{$_POST["genre"]}',
-                  '{$_POST["width"]}',
-                  '{$_POST["height"]}',
-                  '{$_POST["price"]}',
+          VALUES ('$artist',
+                  '$title',
+                  '$description',
+                  '$year',
+                  '$genre',
+                  '$width',
+                  '$height',
+                  '$price',
                   '{$_SESSION["userID"]}')";
     $result=$mysqli->query($sql);
 

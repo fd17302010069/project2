@@ -46,6 +46,18 @@ else {
             while ($row=$cartResult->fetch_assoc()){
                 $artResult=$mysqli->query("SELECT * FROM artworks WHERE artworkID='{$row["artworkID"]}'");
                 $artWork=$artResult->fetch_assoc();
+
+                if(!$artWork){ //购物车中存在已被删除的商品
+                    ?>
+                    <div class="product">
+                        <p>
+                            <span class="delete"><a href="removeFromCart.php?id=<?php echo $row["cartID"];?>"><i class="far fa-trash-alt"></i> 删除</a></span>
+                        </p>
+                    </div>
+                    <?php
+                    continue;
+                }
+
                 $sumPrice+=$artWork["price"];
                 if(mb_strlen($artWork["description"])>300){
                     $artWork["description"]=mb_substr($artWork["description"],0,300,"UTF8")."...";
@@ -59,7 +71,7 @@ else {
                     <p>
                         <span class="view_detail"><a href="detail.php?id=<?php echo $artWork["artworkID"];?>">查看详情</a></span><!--
                     --><span class="detail">价格：<?php echo $artWork["price"];?></span><!--
-                    --><button class="delete"><i class="far fa-trash-alt"></i> 删除</button>
+                    --><span class="delete"><a href="removeFromCart.php?id=<?php echo $row["cartID"];?>"><i class="far fa-trash-alt"></i> 删除</a></span>
                     </p>
                 </div>
                 <?php

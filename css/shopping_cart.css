@@ -34,7 +34,7 @@ section{
     padding: 0.3em 0;
 }
 .intro{
-    margin-bottom: 0.6em;
+    margin-bottom: 1em;
 }
 .detail,.view_detail{
     background: lightcyan;
@@ -50,6 +50,10 @@ section{
 }
 .delete:hover{
     background: lightcoral;
+}
+.delete a{
+    color: black;
+    text-decoration: none;
 }
 .detail{
     padding: 0.3em 0.5em;

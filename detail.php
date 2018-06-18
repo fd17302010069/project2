@@ -5,7 +5,7 @@ if($mysqli->connect_errno){
 }
 $mysqli->query("set names 'utf8'");
 
-include 'generateCartOption.php';
+include "generateCartOption.php";
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +17,7 @@ include 'generateCartOption.php';
     <link rel="stylesheet" type="text/css" href="css/nav.css" />
     <link rel="stylesheet" type="text/css" href="css/content_header.css" />
     <link rel="stylesheet" type="text/css" href="css/details.css" />
+    <link rel="stylesheet" type="text/css" href="css/myAlert.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 </head>
 
@@ -36,6 +37,9 @@ include 'generateCartOption.php';
             }
             else{
                 $cartResult=$mysqli->query("SELECT * FROM carts WHERE artworkID='{$_GET['id']}'");
+                $newView=(int)$artwork["view"]+1;
+                $mysqli->query("UPDATE artworks SET view='$newView' WHERE artworkID='{$_GET['id']}'");
+                $artwork["view"]++;
             }
         ?>
             <h2><?php echo $artwork["title"]?></h2>
@@ -85,8 +89,15 @@ include 'generateCartOption.php';
         <input type="hidden" name="search_option[]" value="artist">
     </form>
 
+    <form id="cart_info" method="post" action="addToCart.php">
+        <input type="hidden" name="artworkID" value="<?php echo $_GET["id"];?>">
+        <input type="hidden" name="userID" value="<?php echo $_SESSION["userID"];?>">
+    </form>
+
     <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
     <script src="js/detail.js"></script>
+    <script src="js/myAlert.js"></script>
+
 </body>
 </html>
 

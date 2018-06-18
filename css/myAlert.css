@@ -4,7 +4,7 @@
     right: 50%;
     top: 5%;
     width: 380px;
-    height: 120px;
+    min-height: 120px;
     margin-left: -190px;
     background: white;
     border: solid gray;
@@ -31,7 +31,7 @@
     margin-top: 10px;
     text-align: right;
 }
-.okButton{
+.okButton,.cancelButton{
     float: right;
     font-size: 12pt;
 }

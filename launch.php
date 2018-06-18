@@ -28,6 +28,7 @@ if(isset($_GET['id'])){
     $price=$art['price'];
     $img="img/".$art['imageFileName'];
     $fileRequired="";
+    $action="revise.php?id=".$_GET['id'];
 }
 else{
     $title="";
@@ -42,8 +43,6 @@ else{
     $fileRequired="required";
     $action="upload.php";
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -134,7 +133,7 @@ else{
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="submit" value="提交"  class="launch_btn">
+                            <input type="submit" value="提交" class="launch_btn">
                         </td>
                     </tr>
                 </table>
