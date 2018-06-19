@@ -43,6 +43,11 @@ if(isset($_POST["sum_price"]) && isset($_POST["user_balance"])){
                 $canPay=false;
                 break;
             }
+            if(strtotime($artWork["timeRevised"])>=strtotime($row["timeAdded"])){ //添加购物车后商品发生修改
+                myAlert("艺术品{$artWork['title']}信息被修改！请重新添加购物车");
+                $canPay=false;
+                break;
+            }
         }
 
         if($canPay){

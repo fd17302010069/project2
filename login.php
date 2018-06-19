@@ -1,4 +1,5 @@
 <?php
+header("Cache-control: private");
 if(!isset($_SESSION)){
     session_start();
 }

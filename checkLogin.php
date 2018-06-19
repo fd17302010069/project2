@@ -1,4 +1,5 @@
 <?php
+header("Cache-control: private");
 $mysqli = new mysqli("localhost","root","","art");
 if($mysqli->connect_errno){
     die('Failed to connect to MySQL:'.$mysqli->connect_error);
@@ -40,7 +41,7 @@ else{
             $_SESSION["userID"]=$user['userID'];
 
             myAlert("登陆成功！",false);
-            ?><script>window.location.href='homepage.php';</script><?php //TODO:登陆后回到上一个页面
+            ?><script>window.history.go(-2);</script><?php //TODO:登陆后回到上一个页面
 
         }
     }

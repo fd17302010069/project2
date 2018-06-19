@@ -21,13 +21,6 @@ else{
 
     if($user){
         myAlert("用户名已存在！");
-        ?>
-        <script>
-            document.getElementById("email").value="<?php echo $_POST['email']?>";
-            document.getElementById("phone").value="<?php echo $_POST['phone']?>";
-            document.getElementById("address").value="<?php echo $_POST['address']?>";
-        </script>
-        <?php
     }
     else{
         $sql="INSERT INTO users (name,email,password,tel,address) 

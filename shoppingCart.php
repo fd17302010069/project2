@@ -50,6 +50,7 @@ else {
                 if(!$artWork){ //购物车中存在已被删除的商品
                     ?>
                     <div class="product">
+                        <h3 class="intro">此商品已被删除！</h3>
                         <p>
                             <span class="delete"><a href="removeFromCart.php?id=<?php echo $row["cartID"];?>"><i class="far fa-trash-alt"></i> 删除</a></span>
                         </p>
