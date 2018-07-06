@@ -28,7 +28,7 @@ if(isset($_GET["id"])){
     $result=$mysqli->query("DELETE FROM artworks WHERE artworkID='{$_GET["id"]}'");
 
     if($result){
-        unlink($path);
+        unlink($path); //删除图片文件
         myAlert("删除成功！",false);
         ?><script>window.location.href="userInfo.php";</script><?php
     }

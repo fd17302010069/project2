@@ -46,6 +46,7 @@ else{
     <link rel="stylesheet" type="text/css" href="css/content_header.css" />
     <link rel="stylesheet" type="text/css" href="css/user_info.css" />
     <link rel="stylesheet" type="text/css" href="css/myAlert.css" />
+    <link rel="stylesheet" type="text/css" href="css/trace.css" />
 </head>
 <body>
     <?php

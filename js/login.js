@@ -5,9 +5,11 @@ let username = document.getElementById("username");
 let nameError = document.getElementById("name_error");
 let password = document.getElementById("password");
 let passError = document.getElementById("pass_error");
+let captcha = document.getElementById("captcha");
+let captchaError = document.getElementById("captcha_error");
 let cancel = document.getElementById("cancel");
 
-let flags=[false,false];
+let flags=[false,false,false];
 
 function checkFlags(flags){
     for(let i=0;i<flags.length;i++){
@@ -37,6 +39,17 @@ password.onblur=function () {
     else{
         passError.innerHTML="&emsp;";
         flags[1]=true;
+    }
+};
+
+captcha.onblur=function(){
+    if(captcha.value===""){
+        captchaError.innerHTML="*验证码不得为空";
+        flags[2]=false;
+    }
+    else {
+        captchaError.innerHTML="&emsp;";
+        flags[2]=true;
     }
 };
 

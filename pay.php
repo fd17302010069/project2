@@ -54,24 +54,24 @@ if(isset($_POST["sum_price"]) && isset($_POST["user_balance"])){
             $orderSql = "INSERT INTO orders (ownerID,sum)
                           VALUES ('{$_SESSION["userID"]}','{$_POST["sum_price"]}')";
             $orderResult = $mysqli->query($orderSql);
-            $orderID = $mysqli->insert_id;
+            $orderID = $mysqli->insert_id; //获取新建订单的id
 
             $afterBalance = $_POST["user_balance"] - $_POST["sum_price"];
             $mysqli->query("UPDATE users SET balance='$afterBalance' WHERE userID='{$_SESSION["userID"]}'");
-            $_SESSION["balance"] = $afterBalance;
+            $_SESSION["balance"] = $afterBalance; //扣除用户余额
 
             $cartResult = $mysqli->query($sql);
             while ($row = $cartResult->fetch_assoc()) {
-                $mysqli->query("UPDATE artworks SET orderID='$orderID' WHERE artworkID='{$row["artworkID"]}'");
+                $mysqli->query("UPDATE artworks SET orderID='$orderID' WHERE artworkID='{$row["artworkID"]}'");  //给艺术品增加订单号
 
                 $artResult = $mysqli->query("SELECT price,ownerID FROM artworks WHERE artworkID='{$row["artworkID"]}'");
                 $artWork = $artResult->fetch_assoc();
                 $ownerResult = $mysqli->query("SELECT balance FROM users WHERE userID='{$artWork["ownerID"]}'");
                 $owner = $ownerResult->fetch_assoc();
                 $newBalance = $owner["balance"] + $artWork["price"];
-                $mysqli->query("UPDATE users SET balance='$newBalance' WHERE userID='{$artWork["ownerID"]}'");
+                $mysqli->query("UPDATE users SET balance='$newBalance' WHERE userID='{$artWork["ownerID"]}'");  //金额转入发布者余额
 
-                $mysqli->query("DELETE FROM carts WHERE cartId='{$row["cartID"]}'");
+                $mysqli->query("DELETE FROM carts WHERE cartId='{$row["cartID"]}'");  //将该商品从用户购物车中删除
             }
 
             $_SESSION['cartNum'] = 0;

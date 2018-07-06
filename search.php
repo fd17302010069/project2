@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/content_header.css" />
     <link rel="stylesheet" type="text/css" href="css/search.css" />
     <link rel="stylesheet" type="text/css" href="css/page.css" />
+    <link rel="stylesheet" type="text/css" href="css/trace.css" />
 </head>
 
 <body>

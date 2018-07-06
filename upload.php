@@ -25,6 +25,7 @@ if(isset($_POST["art_title"]) && isset($_FILES["file"])){
         die('Error:'.$_FILES["file"]["error"]);
     }
 
+    //将上传信息中的特殊字符转义 //如\'
     $artist=$mysqli->real_escape_string($_POST["art_artist"]);
     $title=$mysqli->real_escape_string($_POST["art_title"]);
     $description=$mysqli->real_escape_string($_POST["art_description"]);
@@ -47,7 +48,7 @@ if(isset($_POST["art_title"]) && isset($_FILES["file"])){
     $result=$mysqli->query($sql);
 
     if($result){
-        $id=$mysqli->insert_id;
+        $id=$mysqli->insert_id;  //新插入数据的id
         $fileName=$id.".jpg";
 
         move_uploaded_file($_FILES["file"]["tmp_name"],"img/".$fileName);

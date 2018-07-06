@@ -12,8 +12,8 @@ include 'alert.php';
 if(!isset($_SESSION)){
     session_start();
 }
-$_SESSION=array();
-setcookie(session_name(),'',time()-3600,'/');
+$_SESSION=array(); //清空session
+setcookie(session_name(),'',time()-3600,'/'); //清空cookie中的session ID
 session_destroy();
 
 myAlert("登出成功！",false);

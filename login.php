@@ -18,7 +18,7 @@ if(isset($_SESSION['username'])){
     <link rel="stylesheet" type="text/css" href="css/nav.css" />
     <link rel="stylesheet" type="text/css" href="css/main_header.css" />
     <link rel="stylesheet" type="text/css" href="css/form.css" />
-<!--    <link rel="stylesheet" type="text/css" href="css/verification_code.css" />-->
+    <link rel="stylesheet" type="text/css" href="css/captcha.css" />
     <link rel="stylesheet" type="text/css" href="css/myAlert.css" />
 
 </head>
@@ -49,16 +49,16 @@ if(isset($_SESSION['username'])){
                         <td><input type="password" name="password" id="password"></td>
                     </tr>
                     <tr><td colspan="2"><span class="error" id="pass_error">&emsp;</span></td></tr>
-<!--                    <tr>-->
-<!--                        <td><label for="verification_code">验证码：</label></td>-->
-<!--                        <td>-->
-<!--                            <input type="text" id="verification_code">-->
-<!--                            <div id="verification_img">-->
-<!--                                <img src="" id="verif1"><img src="" id="verif2"><img src="" id="verif3"><img src="" id="verif4">-->
-<!--                            </div>-->
-<!--                        </td>-->
-<!--                    </tr>-->
-<!--                    <tr><td colspan="2"><span class="error" id="verification_error">&emsp;</span></td></tr>-->
+                    <tr>
+                        <td><label for="captcha">验证码：</label></td>
+                        <td>
+                            <input type="text" id="captcha" name="captcha" autocomplete="off">
+                            <div class="captcha_img_box">
+                                <?php include "captcha.php";?>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr><td colspan="2"><span class="error" id="captcha_error">&emsp;</span></td></tr>
                     <tr>
                         <td colspan="2">
                             <input type="submit" value="登陆" id="go_login">
@@ -72,6 +72,7 @@ if(isset($_SESSION['username'])){
 
     <script src="js/login.js"></script>
     <script src="js/myAlert.js"></script>
+    <script src="js/captcha.js"></script>
 
 </body>
 </html>

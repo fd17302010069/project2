@@ -62,7 +62,7 @@ if(isset($_POST['search'])&&isset($_POST['search_option'])){
         while($row=$searchResult->fetch_assoc()){
             if(mb_strlen($row["description"])>300){
                 $row["description"]=mb_substr($row["description"],0,300,"UTF8")."...";
-            }
+            } //简介部分显示
             ?>
             <div class="search_result">
                 <img src="img/<?php echo $row["imageFileName"]?>" alt="<?php echo $row["title"]?>" width="150" height="150">

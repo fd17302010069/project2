@@ -1,4 +1,5 @@
 <?php
+header('Cache-Control:no-cache,must-revalidate');
 $mysqli = new mysqli("localhost","root","","art");
 if($mysqli->connect_errno){
     die('Failed to connect to MySQL:'.$mysqli->connect_error);
@@ -18,6 +19,7 @@ include "generateCartOption.php";
     <link rel="stylesheet" type="text/css" href="css/content_header.css" />
     <link rel="stylesheet" type="text/css" href="css/details.css" />
     <link rel="stylesheet" type="text/css" href="css/myAlert.css" />
+    <link rel="stylesheet" type="text/css" href="css/trace.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 </head>
 

@@ -1,10 +1,10 @@
-#verification_code{
+#captcha{
     width: 100px;
     float: left;
 }
-#verification_img{
+.captcha_img_box{
     float: right;
 }
-#verif1,#verif2,#verif3,#verif4{
+.captcha_img{
     vertical-align: middle;
 }

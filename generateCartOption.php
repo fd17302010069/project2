@@ -8,7 +8,7 @@ function generateCartOption($artwork,$cartResult){
             echo'<button disabled title="请登录后进行添加购物车操作"><i class="fas fa-shopping-cart"></i> Add to Shopping Cart</button>';
         }
         else {
-            if($artwork["ownerID"]===$_SESSION["userID"]){
+            if($artwork["ownerID"]===$_SESSION["userID"]){ //当前商品是当前用户发布
                 echo'<span class="disabled_button">For sale</span>';
             }
             else{

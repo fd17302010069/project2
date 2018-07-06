@@ -14,7 +14,7 @@ if(!isset($_SESSION['userID'])){
     header("Location:login.php"); //未登录用户跳转到登陆页面
 }
 
-if(isset($_GET['id'])){
+if(isset($_GET['id'])){ //有id：修改 无id：发布
     $artResult=$mysqli->query("SELECT * FROM artworks WHERE artworkID='{$_GET['id']}'");
     $art=$artResult->fetch_assoc();
 
@@ -54,6 +54,7 @@ else{
     <link rel="stylesheet" type="text/css" href="css/nav.css" />
     <link rel="stylesheet" type="text/css" href="css/content_header.css" />
     <link rel="stylesheet" type="text/css" href="css/launch.css" />
+    <link rel="stylesheet" type="text/css" href="css/trace.css" />
 </head>
 <body>
 

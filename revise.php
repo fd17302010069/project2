@@ -61,6 +61,8 @@ if(isset($_GET["id"])){
         move_uploaded_file($_FILES["file"]["tmp_name"],"img/".$artWork["imageFileName"]);
     }
 
+    $mysqli->query("UPDATE artworks SET timeRevised=CURRENT_TIMESTAMP WHERE artworkID='{$_GET["id"]}'"); //更新修改时间
+
     myAlert("修改成功！",false);
     ?><script>window.location.href="detail.php?id=<?php echo $_GET["id"];?>";</script><?php
 }

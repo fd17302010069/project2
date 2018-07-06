@@ -32,16 +32,21 @@ else{
             myAlert("用户名或密码错误");
         }
         else{
-            $cartInfo=$mysqli->query("SELECT * FROM carts WHERE userID='{$user['userID']}'");
-            $cartNum=$cartInfo->num_rows;
+            if($_POST["captcha"] !== $_SESSION["captcha"]){
+                myAlert("验证码错误！");
+            }
+            else{
+                $cartInfo=$mysqli->query("SELECT * FROM carts WHERE userID='{$user['userID']}'");
+                $cartNum=$cartInfo->num_rows;
 
-            $_SESSION["username"]=$_POST['username'];
-            $_SESSION["cartNum"]=$cartNum;
-            $_SESSION["balance"]=$user['balance'];
-            $_SESSION["userID"]=$user['userID'];
+                $_SESSION["username"]=$_POST['username'];
+                $_SESSION["cartNum"]=$cartNum;
+                $_SESSION["balance"]=$user['balance'];
+                $_SESSION["userID"]=$user['userID'];
 
-            myAlert("登陆成功！",false);
-            ?><script>window.history.go(-2);</script><?php //TODO:登陆后回到上一个页面
+                myAlert("登陆成功！",false);
+                ?><script>window.history.go(-2);</script><?php
+            }
 
         }
     }

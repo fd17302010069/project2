@@ -22,6 +22,14 @@ while($row=$latestResult->fetch_assoc()){
     }
     $latestArt[]=$row;
 }
+if(!isset($_COOKIE["trace"])){
+    setcookie("trace","<a class='traceTag' href='{$_SERVER["REQUEST_URI"]}'>首页</a>");
+}
+else{
+    $current="<a class='traceTag' href='{$_SERVER["REQUEST_URI"]}'>首页</a>";
+    $newValue=$_COOKIE["trace"]."+".$current;
+    setcookie("trace",$newValue);
+}
 ?>
 
 <!DOCTYPE html>

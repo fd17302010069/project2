@@ -9,6 +9,8 @@
         $searchValue="";
         $searchOptionChecked=array("checked","checked","checked");
     }
+
+include "getTitle.php";
 ?>
 
 <header>
@@ -25,4 +27,25 @@
          --><input type="checkbox" name="search_option[]" value="artist" id="artist" <?php echo $searchOptionChecked[2]?>>
         </div>
     </form>
+
+    <span class="trace">
+        <?php
+        if(!isset($_COOKIE["trace"])){
+            setcookie("trace","<a class='traceTag' href='{$_SERVER["REQUEST_URI"]}'>".getTitle($_SERVER["REQUEST_URI"])."</a>");
+        }
+        $trace=explode("+",$_COOKIE["trace"]);
+        for($i=0;$i<count($trace);$i++){
+            echo $trace[$i]."->";
+        }
+        $current="<a class='traceTag' href='{$_SERVER["REQUEST_URI"]}'>".getTitle($_SERVER["REQUEST_URI"])."</a>";
+        if($current!==$trace[count($trace)-1]){
+            echo $current;
+            $newValue=$_COOKIE["trace"]."+".$current;
+            setcookie("trace",$newValue);
+        }
+
+        ?>
+    </span>
+
 </header>
+<script src="js/trace.js"></script>
